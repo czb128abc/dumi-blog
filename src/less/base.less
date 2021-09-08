@@ -1,0 +1,196 @@
+body {
+  .ant-card-extra {
+    padding: 0;
+  }
+
+  .clearfix::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+
+  .float {
+    &--left {
+      float: left;
+    }
+
+    &--right {
+      float: right;
+    }
+  }
+
+  .text {
+    &-hidden {
+      display: none !important;
+    }
+    &-left {
+      text-align: left;
+    }
+
+    &-right {
+      text-align: right;
+    }
+
+    &-center {
+      text-align: center;
+    }
+
+    &-amount {
+      padding-right: 10;
+      text-align: right;
+    }
+
+    &-overflow {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    &-only-hover__parent {
+      .text-only-hover__child {
+        display: none;
+      }
+      &:hover {
+        .text-only-hover__child {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .btn-group {
+    .ant-btn,
+    .mock-link {
+      margin-right: 8px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .icon-group {
+    .anticon {
+      margin-right: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+    .anticon:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .white-background {
+    background: #fff;
+  }
+
+  .font {
+    &-weight {
+      &_bold {
+        font-weight: bold;
+      }
+    }
+    &-size_ {
+      &16 {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      &20 {
+        font-size: 20;
+        line-height: 28px;
+      }
+      &24 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+      &30 {
+        font-size: 30;
+        line-height: 38px;
+      }
+      &38 {
+        font-size: 38px;
+        line-height: 46px;
+      }
+      &46 {
+        font-size: 46px;
+        line-height: 54px;
+      }
+    }
+  }
+
+  // .page-view {
+  .holder-spacing {
+    width: 100%;
+    padding-top: 14px;
+  }
+
+  /**
+    功能模块间距
+    */
+  .block-spacing {
+    width: 100%;
+    padding-top: 32px;
+  }
+  .min-page-view {
+    min-height: 600px;
+  }
+
+  /**
+    left right to bottom padding margin start
+  */
+  @postionSet: {
+    top: t;
+    right: r;
+    bottom: b;
+    left: l;
+  };
+  @ranges: 8, 16, 24, 32, 64, 1, 2, 5, 10, 20, 40, 80;
+
+  /**
+  */
+  each(@ranges, .(@rangesValue){
+    .ui-p--@{rangesValue} {
+      padding: (@rangesValue * 1px);
+    }
+  });
+
+  each(@ranges, .(@rangesValue){
+    .ui-m--@{rangesValue} {
+      margin: (@rangesValue * 1px);
+    }
+  });
+
+  each(@ranges, .(@rangesValue){
+    .ui-p-lr--@{rangesValue} {
+      padding-left: (@rangesValue * 1px);
+      padding-right: (@rangesValue * 1px);
+    }
+    .ui-p-tb--@{rangesValue} {
+      padding-top: (@rangesValue * 1px);
+      padding-bottom: (@rangesValue * 1px);
+    }
+  });
+
+  each(@ranges, .(@rangesValue){
+    .ui-m-lr--@{rangesValue} {
+      margin-left: (@rangesValue * 1px);
+      margin-right: (@rangesValue * 1px);
+    }
+    .ui-m-tb--@{rangesValue} {
+      margin-top: (@rangesValue * 1px);
+      margin-bottom: (@rangesValue * 1px);
+    }
+  });
+
+  each(@postionSet, .(@pValue,@pKey){
+    each(@ranges, .(@rangesValue){
+      .ui-m-@{pValue}--@{rangesValue} {
+        margin-@{pKey}: (@rangesValue * 1px);
+      }
+      .ui-p-@{pValue}--@{rangesValue} {
+        padding-@{pKey}: (@rangesValue * 1px);
+      }
+    });
+  });
+
+  /**
+    left right to bottom padding margin end
+  */
+}

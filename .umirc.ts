@@ -19,6 +19,12 @@ export default defineConfig({
   // },
   title: 'dumi-blog',
   mode: 'site',
+  dva: {
+    hmr: true,
+    skipModelValidate: true,
+    // umi 3已经弃用了lazyLoad,设置了也没作用
+    lazyLoad: true,
+  },
   // more config: https://d.umijs.org/config
   locales: [['zh-CN', '中文']],
   extraBabelPlugins: [
