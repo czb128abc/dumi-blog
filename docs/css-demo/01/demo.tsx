@@ -1,3 +1,5 @@
+import 'dumi-blog';
+
 export default () => {
   return (
     <div className="flex items-center justify-center">
