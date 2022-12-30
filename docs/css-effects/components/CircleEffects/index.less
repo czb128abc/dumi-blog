@@ -1,0 +1,82 @@
+.circle-effects-root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .circle-effects {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .circle-one {
+    z-index: 100;
+  }
+  .circle-two {
+    z-index: 50;
+  }
+  .circle-three {
+    z-index: 1;
+  }
+  .circle-opa {
+    animation-name: opacity-fade;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  .circle-move {
+    animation-name: move;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  .circle-move-big {
+    animation-name: move-more;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  &.color-one {
+    .circle-effects {
+      background-color: rgba(205, 39, 39, 1);
+      &.circle-two {
+        background-color: rgba(205, 39, 39, 0.7);
+      }
+      &.circle-three {
+        background-color: rgba(205, 39, 39, 0.5);
+      }
+    }
+  }
+}
+
+//透明度逐渐消失
+@keyframes opacity-fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+//扩散
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+//更大的扩散
+@keyframes move-more {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

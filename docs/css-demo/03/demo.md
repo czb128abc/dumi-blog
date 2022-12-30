@@ -14,4 +14,4 @@ title: flex 学习
 
 当「flex-basis」在「flex」属性中等于 0 时，「flex 子项」将分配容器的所有空间（因为各项的伸缩基准值相加等于 0，剩余空间等于容器宽度减去各项的伸缩基准值，即减 0，最后剩余空间值等于容器宽度），所以可以借助此特性，给各子项定义「flex: n」来进行按比例均分容器总宽度
 
-<code src="./demo.tsx" iframe="400">
+<code src="./demo.tsx" description="demo 描述">demo 标题</code>

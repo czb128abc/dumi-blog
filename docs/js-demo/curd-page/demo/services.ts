@@ -1,6 +1,7 @@
 import type { Bean, ResultBean } from 'pro-crud-page/types/interface';
 import { request, utils } from 'pro-crud-page';
-const { post, get } = request;
+
+const { post, get, baseRequest } = request;
 const { asyncDelay } = utils;
 
 const data = {

@@ -1,0 +1,25 @@
+<svg>
+          <defs>
+            <radialGradient
+              id="grad1"
+              cx="50%"
+              cy="50%"
+              r="50%"
+              fx="50%"
+              fy="50%"
+            >
+              <stop offset="0%" style={{ stopColor: 'rgba(2,246,255,.5)' }} />
+              <stop offset="100%" style={{ stopColor: 'rgba(2,246,255,0)' }} />
+            </radialGradient>
+          </defs>
+          <path
+            d="M 105 34 L 5 34"
+            stroke="rgba(29,159,167,0.4)"
+            fill="transparent"
+            strokeWidth={5}
+          ></path>
+          <g>
+            <circle cx="10" cy="20" r="15" fill="url(#grad1)"></circle>
+            <circle cx="10" cy="20" r="5" fill="rgba(2,246,255)"></circle>
+          </g>
+        </svg>

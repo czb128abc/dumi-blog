@@ -1,0 +1,24 @@
+.cycle {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    to right,
+    rgb(211, 48, 48),
+    rgba(19, 16, 93, 0.8),
+    rgb(25, 211, 56)
+  );
+  border-radius: 50%;
+  animation: test-cycle-rotate 5s infinite linear;
+}
+@keyframes test-cycle-rotate {
+  0% {
+    transform: rotateX(75deg) rotateZ(0);
+  }
+  100% {
+    transform: rotateX(75deg) rotateZ(360deg);
+  }
+}
+
+.rotate-source-svg {
+  background: red;
+}

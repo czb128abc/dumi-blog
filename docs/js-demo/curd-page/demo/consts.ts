@@ -1,6 +1,6 @@
 import type { ColumnsMap } from 'pro-crud-page/types/interface';
 
-export const namespace = 'basicDataMgtCmmSite';
+export const namespace = 'demoTest';
 
 export const initialValue = '';
 
