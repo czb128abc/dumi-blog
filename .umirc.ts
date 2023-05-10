@@ -40,4 +40,28 @@ export default defineConfig({
     // 'umi-plugin-tailwindcss',
   ],
   styles: ['//at.alicdn.com/t/font_2771589_b8x1d6ow39n.css'],
+  chainWebpack(config: any) {
+    config.module
+      .rule('glsl')
+      .test(/\.glsl$/)
+      .use('raw-loader')
+      .loader('raw-loader')
+      .end();
+    // config.module.rules.push({
+    //   test: /\.glb/,
+    //   use: [
+    //     options.defaultLoaders.babel,
+    //     {
+    //       loader: 'file-loader'
+    //     },
+    //   ],
+    //   test: /\.glsl/,
+    //   use: [
+    //     options.defaultLoaders.babel,
+    //     {
+    //       loader: 'raw-loader'
+    //     },
+    //   ],
+    // });
+  },
 });

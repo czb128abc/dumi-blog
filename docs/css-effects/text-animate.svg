@@ -1,0 +1,55 @@
+<svg
+  id="textPathDemo"
+  class="round-text"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="500"
+  viewBox="0 0 500 500"
+>
+  <path
+    id="text-path1"
+    class="text-path"
+    d="M40 12 H200 A28 28 0 0 1 226 40  V305 A28 28 0 0 1 200 332 H40 A28 28 0 0 1 12 306 V40 A28 28 0 0 1 40 12 H200 A28 28 0 0 1 226 40 V305 A28 28 0 0 1 200 332 H40 A28 28 0 0 1 12 306 V40 A28 28 0 0 1 40 12 z"
+    fill="#ccc"
+    stroke="blue"
+    stroke-dasharray="5,2"
+    stroke-width="1"
+  />
+  <text class="circle-text">
+    <textPath xlink:href="#text-path1" class="text-content" textLength="280" startOffset="0"
+      fill="red"> svg文字路径动画111111111111111111 <animate attributeName="startOffset" from="0"
+        to="1020" begin="0s" dur="18s" repeatCount="indefinite" />
+    </textPath>
+    <textPath xlink:href="#text-path1" class="text-content" textLength="280" startOffset="520">
+      svg文字路径动画222222222222222222 <animate attributeName="startOffset" from="520" to="1540"
+        begin="0s" dur="18s" repeatCount="indefinite" />
+    </textPath>
+  </text>
+  <text>
+    svg文字路径动画222222222222222222
+    <animate attributeName="startOffset" from="520" to="1540"
+      begin="0s" dur="18s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform"
+        type="rotate" from="0 0 0" by="360"
+        begin="0s" dur="10s" repeatCount="indefinite" />
+  </text>
+
+  <text alignment-baseline="baseline" text-anchor="middle" opacity="1" stroke-width="1"
+    stroke-opacity="1" fill-opacity="1" x="122.5" y="125.5" font-size="114" font-family="Verdana"
+    font-style="normal" font-weight="normal" font-variant="normal" fill="red" paint-order="stroke"
+    style="stroke-linecap:butt; stroke-linejoin:miter;" stroke="none"
+    transform="matrix(1,0,0,1,-9.094947017729282e-13,-3.410605131648481e-13)">成都地铁 <animate
+      attributeName="font-size" repeatCount="indefinite" attributeType="XML" from="50" to="114"
+      dur="2"
+      fill="freeze"></animate>
+        <animate attributeName="opacity" repeatCount="indefinite"
+      attributeType="XML" from="0" to="1" dur="2"
+      fill="freeze"></animate>
+      <animateTransform attributeName="transform"
+        type="rotate" from="0 0 0" by="360"
+        begin="0s" dur="10s" repeatCount="indefinite" />
+  </text>
+  <circle cx="56.7573" cy="92.8179" r="2" fill="black" stroke="black" stroke-width="1">
+    <set attributeName="cy" to="105.7318" begin="2s"/>
+  </circle>
+</svg>

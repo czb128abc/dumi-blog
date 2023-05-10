@@ -24,7 +24,6 @@
     "typings",
     "**/__test__",
     "test",
-    "docs",
     "tests"
   ]
 }

@@ -66,7 +66,6 @@ class Countdown2 extends React.Component<CountdownProps, CountdownState> {
 
 const Demo = () => (
   <div>
-    <Countdown countdown={10} />
     <Countdown2 countdown={10} />
   </div>
 );

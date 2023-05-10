@@ -1,0 +1,246 @@
+.wave-box {
+  padding: 30px;
+  filter: contrast(10) hue-rotate(0);
+
+  .circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+
+    animation: circleRotate 5s linear infinite;
+
+    &::after,
+    &::before {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: aqua;
+      border-radius: 40%;
+      content: '';
+      // animation: circleRotate 5s linear infinite;
+    }
+
+    &::before {
+    }
+
+    &::after {
+      // border-radius: 50%;
+      // background-color: #000;
+      z-index: 10;
+      border-radius: 42% 38% 62% 45%;
+    }
+
+    .circle-inner {
+      position: absolute;
+      z-index: 20;
+      background-color: red;
+      border: 1px solid red;
+      border-radius: 50%;
+    }
+  }
+}
+
+.g-contrast {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  background-color: #000;
+  filter: contrast(10) hue-rotate(0);
+  animation: hueRotate 10s infinite linear;
+}
+
+.g-circle {
+  position: relative;
+  box-sizing: border-box;
+  width: 300px;
+  height: 300px;
+  filter: blur(8px);
+
+  &::after {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 200px;
+    height: 200px;
+    background-color: #00ff6f;
+    // border-radius: 42% 38% 62% 49%/45%;
+    border-radius: 45%;
+    transform: translate(-50%, -50%) rotate(0);
+    animation: circle-rotate 10s infinite linear;
+    content: '';
+  }
+
+  &::before {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    z-index: 10;
+    width: 176px;
+    height: 176px;
+    background-color: #000;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    content: '';
+  }
+}
+
+@keyframes circle-rotate {
+  50% {
+    border-radius: 45% 38% 58% 49%;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(720deg);
+  }
+}
+
+/* 圆的旋转动画 */
+@keyframes circleRotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// sphere-container
+.sphere-container {
+  width: 200px;
+  height: 200px;
+  padding: 20px;
+}
+
+.sphere {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  &--frosted-glass {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: radial-gradient(circle, #2d6f67, #1a1b1e 20%, #2d6f67 100%);
+    box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.3);
+    // background: linear-gradient(to right, #2D6F67, #1A1B1E);
+    backdrop-filter: blur(20px);
+
+    .inner {
+      &-wrapper {
+        width: 1px;
+        height: 1px;
+      }
+      position: absolute;
+      width: 50%;
+
+      height: 50%;
+      background: radial-gradient(farthest-side, #2d6f67 30%, #9e9e9e 60%);
+      border-radius: 50%;
+      &-one {
+        top: 0;
+        left: 0;
+        box-shadow: inset 10px 20px 30px rgb(248 246 246 ~'/' 10%),
+          10px 10px 20px #9e9e9e, 15px 15px 30px rgb(240 228 228 ~'/' 5%);
+        transform: translate(-70%, -40%);
+      }
+
+      &-two {
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 10px 20px 30px rgb(248 246 246 ~'/' 10%),
+          10px 10px 20px #9e9e9e, 15px 15px 30px rgb(240 228 228 ~'/' 5%);
+        transform: translate(70%, 40%) rotate(180deg);
+      }
+    }
+  }
+
+  &--water-drop {
+    border: 1px solid #aef9ce;
+    /* 设置弯曲 */
+    border-radius: 30% 70% 70% 30%/30% 35% 65% 70%;
+    /* 设置box-shadow :水平方向阴影  垂直方向阴影  模糊距离  阴影尺寸  阴影颜色  内/外阴影(inset/outset(默认))
+    盒子阴影可以有多组值,之间用逗号隔开
+    水平阴影和垂直阴影必须写,其余4个是可选的*/
+    box-shadow: inset 10px 20px 30px rgba(248, 246, 246, 0.1),
+      10px 10px 20px rgba(0, 0, 0, 0.1), 15px 15px 30px rgba(0, 0, 0, 0.05),
+      inset -10px -10px 15px rgba(255, 255, 254, 0.83);
+  }
+}
+
+/* 初始一下水，大小，弯曲，阴影*/
+.water {
+  position: relative;
+  /* 测试用的边框 */
+  /* border: 1px solid; */
+  box-sizing: border-box;
+  width: 400px;
+  height: 400px;
+  /* 设置弯曲 */
+  border-radius: 50% 20% ~'/' 10% 40%;
+  // border-radius: 30% 70% 70% 30% ~"/" 30% 35% 65% 70%;
+  /* 设置box-shadow :水平方向阴影  垂直方向阴影  模糊距离  阴影尺寸  阴影颜色  内/外阴影(inset/outset(默认))
+  盒子阴影可以有多组值,之间用逗号隔开
+  水平阴影和垂直阴影必须写,其余4个是可选的*/
+  box-shadow: inset 10px 20px 30px rgba(0, 0, 0, 0.5),
+    10px 10px 20px rgba(0, 0, 0, 0.3), 15px 15px 30px rgba(0, 0, 0, 0.05),
+    inset -10px -10px 15px rgba(255, 255, 254, 0.83);
+  /*使用关键帧  watermove  9s播放  匀速 无限循环*/
+  animation: watermove 9s linear infinite;
+}
+
+/* 伪元素选择器:在^之后插入 */
+.water::after {
+  position: absolute;
+  top: 80px;
+  left: 60px;
+  width: 35px;
+  height: 35px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  /*使用关键帧  watermove  4s播放  匀速 无限循环*/
+  animation: watermove 4s linear infinite;
+  content: '';
+}
+
+/* 伪元素选择器:在当前盒子最前插入一个东西 */
+.water::before {
+  position: absolute;
+  top: 55px;
+  left: 120px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 28% 72% 31% 69% ~'/' 32% 39% 61% 68%;
+  /*使用关键帧  watermove  4s播放  匀速 无限循环*/
+  animation: watermove 4s linear infinite;
+  content: '';
+}
+
+/* 关键帧 */
+@keyframes watermove {
+  20% {
+    border-radius: 30% 70% 53% 47% ~'/' 28% 44% 56% 72%;
+  }
+
+  40% {
+    border-radius: 30% 70% 39% 61% ~'/' 34% 39% 61% 66%;
+  }
+
+  50% {
+    border-radius: 25% 75% 45% 55% ~'/' 40% 55% 45% 60%;
+  }
+
+  // 80%{
+  //     border-radius: 28% 72% 31% 69% ~"/" 32% 39% 61% 68%;
+  // }
+  61% {
+    border-radius: 50%;
+  }
+
+  100% {
+    border-radius: 50%;
+  }
+}

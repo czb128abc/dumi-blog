@@ -9,5 +9,8 @@ title: css
 ## svg
 
 > 参考
-> https://segmentfault.com/a/1190000039283720
-> <code src="./svg-effects/index.jsx" iframe="400">
+> https://segmentfault.com/a/1190000039283720 > <code src="./svg-effects/index.jsx" iframe="400">
+
+## css wave
+
+> <code src="./css-wave/index.jsx" iframe="400">
